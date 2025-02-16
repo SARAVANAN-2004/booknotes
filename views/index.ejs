@@ -21,12 +21,12 @@
         </section>
         <% items.forEach(item => { %>
             <section class="book">
-                <img src="images/image.png" alt="Book Cover" class="book-cover">
+                <img src=<%=item.img_src %> alt="Book Cover" class="book-cover">
                 <div class="book-details">
                     <h3><a href=""><%= item.title %></a></h3>
                     <p><strong>Date read:</strong> <%=  new Date(item.date).toISOString().split('T')[0]  %> | <strong>Recommendation:</strong> <%= item.recomendation %>/10</p>
                     <p><%= item.short_summary %></p>
-                    <p><a href="">Read my notes</a>, or go to the <a href="">Amazon page</a> for details and reviews.</p>
+                    <p><a href="">Read my notes</a>, or go to the <a href="https://www.amazon.com/s?k=<%= item.isbn %>" target="_blank">Amazon page</a> for details and reviews.</p>
                 </div>
             </section>
         <% }) %>
