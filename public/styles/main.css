@@ -55,3 +55,24 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+form {
+    display: inline; 
+}
+
+form button {
+    background: none;
+    border: none;
+    color: #007bff;  
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: inherit; 
+    padding: 0;
+}
+
+
+form button:hover {
+    color: #0056b3; 
+    text-decoration: underline; 
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= book.title %> - Details</title>
+    <link rel="stylesheet" href="/styles/details.css"> 
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>Saravanan G</h1>
+
+    <section class="book">
+        <img src=<%=book.img_src %> alt="Book Cover" class="book-cover">
+
+        
+        <div class="book-details">
+            <h1><%= book.title %></h1>
+            <p><strong>ISBN:</strong> <%= book.isbn %></p>
+            <p><strong>Date Read:</strong> <%= new Date(book.date).toISOString().split('T')[0] %></p>
+            <p><strong>Recommendation:</strong> <%= book.recomendation %>/10</p>
+
+            <p>
+                <a href="#">Read my notes</a>, or go to the 
+                <a href="https://www.amazon.com/s?k=<%= book.isbn %>" target="_blank">Amazon page</a> for details and reviews.
+            </p>
+
+            <p><%= book.short_summary %></p>
+
+            <h3>My Notes</h3>
+            <ul>
+                <% book.my_notes.forEach(function(line) { %>
+                    <% if (line.trim() !== "") { %>  
+                        <li><%= line %></li>
+                    <% } %>
+                <% }); %>
+            </ul>         
+        </div>
+    </section>
+</body>
+</html>

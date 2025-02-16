@@ -23,7 +23,12 @@
             <section class="book">
                 <img src=<%=item.img_src %> alt="Book Cover" class="book-cover">
                 <div class="book-details">
-                    <h3><a href=""><%= item.title %></a></h3>
+                    <h3>
+                        <form action="/details" method="POST">
+                          <input type="hidden" name="id" value="<%= item.id %>">
+                          <button type="submit"><%= item.title %></button>
+                        </form>
+                      </h3>
                     <p><strong>Date read:</strong> <%=  new Date(item.date).toISOString().split('T')[0]  %> | <strong>Recommendation:</strong> <%= item.recomendation %>/10</p>
                     <p><%= item.short_summary %></p>
                     <p><a href="">Read my notes</a>, or go to the <a href="https://www.amazon.com/s?k=<%= item.isbn %>" target="_blank">Amazon page</a> for details and reviews.</p>
