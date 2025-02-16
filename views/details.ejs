@@ -22,8 +22,9 @@
             <p><strong>Date Read:</strong> <%= new Date(book.date).toISOString().split('T')[0] %></p>
             <p><strong>Recommendation:</strong> <%= book.recomendation %>/10</p>
 
+            <p><a href="/">back to list</a></p>
             <p>
-                <a href="#">Read my notes</a>, or go to the 
+                go to the 
                 <a href="https://www.amazon.com/s?k=<%= book.isbn %>" target="_blank">Amazon page</a> for details and reviews.
             </p>
 
